@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Usability
 gem 'devise'
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

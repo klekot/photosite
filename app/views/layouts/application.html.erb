@@ -6,9 +6,69 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <!-- fixed menu -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Переключить меню навигации</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'Супертишкин Суперсайт', root_path, class: 'navbar-brand' %>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Направления <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Стандарт:</li>
+                <li><a href="#">Портреты</a></li>
+                <li><a href="#">Студийная съемка</a></li>
+                <li><a href="#">Свадебное фото</a></li>
+                <li class="dropdown-header">Эксклюзив:</li>
+                <li><a href="#">Светографика</a></li>
+                <li><a href="#">Дорожное фото</a></li>
+                <li><a href="#">Разное</a></li>
+              </ul>
+            </li>
+            <li><%= link_to 'Теги', tags_path %></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <%= yield %>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+    <div class="footer">
+      <footer class="center">
+        <p class="copyright">Copyright 2016 &copy Kristina Shin</p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   </body>
 </html>

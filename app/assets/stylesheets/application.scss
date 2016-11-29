@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "antibootstrap/navbar";
+@import "antibootstrap/dropdowns";
+
+@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  color: white !important;
+  background-color: black;
+}
+body {
+  padding-top: 70px;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  margin: 0 auto;
+  height: 30px; /* .push must be the same height as .footer */
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.navbar-default {
+  font-family: 'Neucha', cursive;
+  font-size: larger;
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+.copyright {
+  font-family: 'Neucha', cursive;
+  font-size: larger;
+}
