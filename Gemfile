@@ -13,7 +13,7 @@ gem 'sass-rails', '>= 3.2'
 
 # JavaScript
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Usability
 gem 'devise'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
-gem 'fancybox-rails'
+gem 'fancybox2-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
