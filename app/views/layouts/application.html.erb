@@ -6,7 +6,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <!-- Bootstrap core CSS -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,23 +28,24 @@
           </button>
           <%= link_to 'Супертишкин Суперсайт', root_path, class: 'navbar-brand' %>
         </div>
+        <% if admin_signed_in? then %>
+          <div class="navbar-header">
+            <a href="javascript:void(0);" class="btn-custom outlined mleft_no reorder_link" id="save_reorder">Переставить фото</a>
+          </div>
+        <% end %>
+
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Направления <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="dropdown-header">Стандарт:</li>
-                <li><a href="#">Портреты</a></li>
-                <li><a href="#">Студийная съемка</a></li>
-                <li><a href="#">Свадебное фото</a></li>
-                <li class="dropdown-header">Эксклюзив:</li>
-                <li><a href="#">Светографика</a></li>
-                <li><a href="#">Дорожное фото</a></li>
-                <li><a href="#">Разное</a></li>
+                <% Category.all.each do |category| %>
+                  <li><%= link_to category.name, category_path(category.id) %></li>
+                <% end %>
               </ul>
             </li>
             <li><%= link_to 'Теги', tags_path %></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><%= link_to 'Контакты', contact_path %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -54,11 +54,9 @@
     <div class="wrapper">
       <div class="container">
         <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
+          <div class="col-md-12">
             <%= yield %>
           </div>
-          <div class="col-md-1"></div>
         </div>
       </div>
       <div class="push"></div>
@@ -69,6 +67,5 @@
       </footer>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   </body>
 </html>

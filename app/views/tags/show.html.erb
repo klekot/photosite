@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<div class="images-container">
+  <% @photos_with_tag.each do |photo| %>
+      <% image_path = photo.image.to_s %>
+      <%= link_to image_tag(image_path, class: "image-responsive image-list"), image_path, class: "fancybox" %>
+  <% end %>
+</div>

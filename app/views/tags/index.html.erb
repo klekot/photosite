@@ -1,25 +1,17 @@
 <p id="notice"><%= notice %></p>
+<h1>Теги</h1>
+<% tags = Tag.all.to_a %>
+<% tags.sort! { |a,b| a.name.downcase <=> b.name.downcase } %>
+<div class="tags-container">
+  <% tags.each do |tag| %>
+    <% photos_number = Photo.includes(:tags).where('tags.id' => tag.id).to_a.size.to_s %>
+    <% image_path = Photo.includes(:tags).where('tags.id' => tag.id).first.image.to_s %>
+    <span class="badge tag-index">
+    <%= link_to image_tag(image_path, class: "image-responsive image-list image-tag"), image_path, class: "fancybox" %><br>
+    <%= link_to ('<span class= "tag-name">' + tag.name + ' ' + '</span><span class= "badge photo-number">' + photos_number + '</span>').html_safe, tag_path(tag.id) %>
+  </span>
+  <% end %>
+</div>
 
-<h1>Tags</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tags.each do |tag| %>
-      <tr>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tag', new_tag_path %>

@@ -10,6 +10,11 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.find(params[:id])
+    @photos_in_category = []
+    Photo.all.each do |photo|
+      @photos_in_category.push photo if photo.category_id == @category.id
+    end
   end
 
   # GET /categories/new

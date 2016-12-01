@@ -10,6 +10,11 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
+    @tag = Tag.find(params[:id])
+    @photos_with_tag = []
+    Photo.all.each do |photo|
+      @photos_with_tag.push photo if photo.tags.include? @tag
+    end
   end
 
   # GET /tags/new

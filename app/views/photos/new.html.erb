@@ -1,5 +1,22 @@
-<h1>New Photo</h1>
-
-<%= render 'form', photo: @photo %>
-
-<%= link_to 'Back', photos_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <%= simple_form_for @photo, url: {action: "create"}, html: {class: "nifty_form", multipart: true} do |f| %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Название:" %><br>
+        <%= f.text_area :description, class: "form-control", placeholder: "Описание", size: "40x5" %><br>
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %><br>
+        <%= f.label "  Направление:" %>
+        <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+        <%= f.label "  Опубликовать" %>
+        <%= f.input_field :published, as: :boolean %>
+        <%= f.label "  На главную" %>
+        <%= f.input_field :main_page, as: :boolean %>
+        <br><br>
+        <div style="text-align: center;">
+          <%= f.submit "Сохранить" , class: "btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

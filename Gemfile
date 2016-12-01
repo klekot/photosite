@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '5.0.0'
+gem 'jquery-turbolinks'
 gem 'turbolinks', '~> 5'
 gem 'react-rails'
 
@@ -25,7 +27,14 @@ gem 'jbuilder', '~> 2.5'
 # Usability
 gem 'devise'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'mini_magick'
 gem 'fancybox2-rails'
+gem 'simple_form'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+# Localization
+gem 'rails-i18n', '~> 5.0.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

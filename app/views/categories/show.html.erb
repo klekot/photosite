@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<h1><%= @category.name %></h1>
+<div class="images-container">
+  <% @photos_in_category.each do |photo| %>
+      <% image_path = photo.image.to_s %>
+      <%= link_to image_tag(image_path, class: "image-responsive image-list"), image_path, class: "fancybox" %>
+  <% end %>
+</div>

@@ -1,0 +1,76 @@
+ru:
+  activerecord:
+    models:
+      category:
+        zero: Направлений
+        one: Направление
+        many: Направлений
+        few: Направлений
+        other: Направления
+      photo:
+        zero: Фото
+        one: Фото
+        many: Фото
+        few: Фото
+        other: Фото
+      tag:
+        zero: Тегов
+        one: Тег
+        many: Тегов
+        few: Тегов
+        other: Теги
+      admin:
+        zero: Администраторов
+        one: Администратор
+        many: Администраторов
+        few: Администратороы
+        other: Администраторы
+      comment:
+        zero: Комментариев
+        one: Комментарий
+        many: Комментариев
+        few: Комментариев
+        other: Комментарии
+    attributes:
+      photo:
+        name: Название
+        description: Описание
+        image: Изображение
+        published: Опубликовано
+        main_page: На главной
+        category: Направление
+        category_id: Направление
+        tags: Теги
+        tag_ids: Теги
+        created_at: Дата создания
+        updated_at: Дата изменения
+      category:
+        name: Название
+        description: Описание
+        image: Изображение
+        photos: Фото
+        created_at: Дата создания
+        updated_at: Дата изменения
+      tag:
+        name: Название
+        photos: Фото
+        created_at: Дата создания
+        updated_at: Дата изменения
+      comment:
+        resource_type: Тип ресурса
+        author_type: Тип автора
+        namespace: Пространство имен
+        body: Текст
+        created_at: Дата создания
+        updated_at: Дата изменения
+      admin:
+        current_sign_in_at: Начало текущего сеанса
+        sign_in_count: Число входов
+        created_at: Дата создания
+  devise:
+    failure:
+      admin:
+        unauthenticated: "Введите ваш логин и пароль"
+    sessions:
+      admin:
+        signed_in:

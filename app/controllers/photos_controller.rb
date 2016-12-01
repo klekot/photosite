@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @photos = Photo.published.main_page.all
   end
 
   # GET /photos/1
@@ -61,14 +61,18 @@ class PhotosController < ApplicationController
     end
   end
 
+  def order_update
+    id_array = params[:ids].to_s.strip.split(%r{,\s*})
+    update_order(id_array)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
       @photo = Photo.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.fetch(:photo, {})
+      params.require(:photo).permit(:name, :description, :image, :image_cache, :published, :main_page, :category_id)
     end
 end

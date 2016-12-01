@@ -11,8 +11,54 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require fancybox
-//= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+    $("a.fancybox").fancybox({
+        'transitionIn'  :   'elastic',
+        'transitionOut' :   'elastic',
+        'speedIn'       :   600,
+        'speedOut'      :   200,
+        'overlayShow'   :   true,
+        'margin'        :   50,
+        'showCloseButton' : true,
+        'showNavArrows' :  true,
+        'cyclic'        :  false,
+        'hideOnContentClick': true,
+        'modal'         :  false
+});
+
+    $('.reorder_link').on('click',function(){
+        $("div.reorder-photos-list").sortable({ tolerance: 'pointer' });
+        $('.reorder_link').html('Сохранить расположение фото');
+        $('.reorder_link').attr("id","save_reorder");
+        $('#reorder-helper').slideDown('slow');
+        $('.image_link').attr("href","javascript:void(0);");
+        $('.image_link').css("cursor","move");
+        $("#save_reorder").click(function( e ){
+            if( !$("#save_reorder i").length )
+            {
+                $(this).html('').prepend('<img src="refresh-animated.gif"/>');
+                $("div.reorder-photos-list").sortable('destroy');
+                $("#reorder-helper").html( "Сохраняем порядок фотографий, не обновлять страницу." ).removeClass('light_box').addClass('notice notice_error');
+                var h = [];
+                $("div.reorder-photos-list span").each(function() {  h.push($(this).attr('id').substr(9));  });
+                $.ajax({
+                    type: "POST",
+                    url: "order_update",
+                    data: {ids: " " + h + ""},
+                    success: function(html)
+                    {
+                        window.location.reload();
+                    }
+                });
+                return false;
+            }
+            e.preventDefault();
+        });
+    });
+});

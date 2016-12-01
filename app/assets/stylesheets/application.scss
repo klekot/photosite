@@ -10,14 +10,37 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_self
+ *= require fancybox
+ *= require jquery-ui
  */
 
+@import "photos";
+@import "tags";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "antibootstrap/navbar";
 @import "antibootstrap/dropdowns";
-@import "fancybox";
+
 @import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Jura:400,500&subset=cyrillic');
+
+@font-face {
+  font-family: "Dewberry_bold";
+  src: url(Dewberry_bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Dear_Joe";
+  src: url(Dear_Joe.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Konkord-Retro";
+  src: url(Konkord-Retro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Summer_Font_Light";
+  src: url(Summer_Font_Light.otf) format("truetype");
+}
 
 * {
   margin: 0;
@@ -25,10 +48,36 @@
 html, body {
   height: 100%;
   color: white !important;
-  background-color: black;
+  background-color: #222222;
+  background-image: url("bg1.jpg");
+  background-repeat: repeat;
 }
 body {
   padding-top: 70px;
+}
+h1 {
+  margin-top: -25px;
+  margin-bottom: -5px;
+  text-align: center;
+  font-family: "Dear_Joe";
+  font-size: 8vw;
+  font-weight: bold;
+  color: #777777;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1270px;
+  }
 }
 .wrapper {
   min-height: 100%;
@@ -38,22 +87,40 @@ body {
 }
 .footer, .push {
   margin: 0 auto;
+  margin-top: 10px;
   height: 30px; /* .push must be the same height as .footer */
 }
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
 }
 .navbar-default {
-  font-family: 'Neucha', cursive;
-  font-size: larger;
+  //font-family: 'Neucha', cursive;
+  //font-family: 'Jura', sans-serif;
+  font-family: "Summer_Font_Light";
+  font-size: 3vw;
   color: white;
   background-color: black;
   border-color: black;
+  opacity: 0.9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.navbar-brand {
+  //font-family: 'Neucha', cursive;
+  //font-family: 'Jura', sans-serif;
+  font-family: "Summer_Font_Light";
+  font-size: 4vw;
+  font-weight: bold;
+  color: white;
 }
 .copyright {
-  font-family: 'Neucha', cursive;
-  font-size: larger;
+  //font-family: 'Neucha', cursive;
+  color: #090909;
+  font-weight: bold;
+  //font-family: 'Jura', sans-serif;
+  font-family: "Dewberry_bold";
+  font-size: large;
+  text-shadow: 0px 2px 3px #666;
 }
