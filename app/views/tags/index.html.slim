@@ -1,0 +1,14 @@
+p id="notice" = notice
+h1 Теги
+- tags = Tag.all.to_a
+- tags.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+div.tags-container
+  - tags.each do |tag|
+    - photos_number = Photo.includes(:tags).where('tags.id' => tag.id).to_a.size.to_s
+    - image_path = Photo.includes(:tags).where('tags.id' => tag.id).first.image.to_s
+    span.badge.tag-index
+      = link_to image_tag(image_path, class: "image-responsive image-list image-tag"), image_path, class: "fancybox"
+      br
+      = link_to tag_path(tag.id) do
+        span.tag-name = tag.name
+        span.badge.photo-number = photos_number

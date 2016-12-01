@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title Photosite
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    /' <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    /' <!--[if lt IE 9]>
+    script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+    script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
+    /' ![endif]-->
+
+  body
+    /' !-- fixed menu -->
+    div class="navbar navbar-default navbar-fixed-top" role="navigation"
+      div class="container"
+        div class="navbar-header"
+          button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+            span class="sr-only">Переключить меню навигации
+            span class="icon-bar"
+            span class="icon-bar"
+            span class="icon-bar"
+          = link_to 'Супертишкин Суперсайт', root_path, class: 'navbar-brand'
+        - if admin_signed_in? then
+          div class="navbar-header"
+            a href="javascript:void(0);" class="btn-custom outlined mleft_no reorder_link" id="save_reorder" Переставить фото
+
+        div class="navbar-collapse collapse"
+          ul class="nav navbar-nav navbar-right"
+            li class="dropdown"
+              a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                |Направления
+                b class="caret"
+              ul class="dropdown-menu"
+                - Category.all.each do |category|
+                  li = link_to category.name, category_path(category.id)
+            li = link_to 'Теги', tags_path
+            li = link_to 'Контакты', contact_path
+
+    div class="wrapper"
+      div class="container"
+        div class="row"
+          div class="col-md-12"
+            = yield
+      div class="push"
+    div class="footer"
+      footer class="center"
+        p class="copyright" Copyright 2016 &copy Kristina Shin

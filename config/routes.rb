@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'information/contact'
 
-  resources :tags
-  resources :categories
-  resources :photos
+  resources :tags,       only: [ :index, :show ]
+  resources :categories, only: [ :index, :show ]
+  resources :photos,     only: [ :index, :show ]
 
   root to: 'photos#index'
   get '/' => 'photos#index'
