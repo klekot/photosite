@@ -50,5 +50,5 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'mina' #, '0.3.8'
+  gem 'mina', '0.3.8'
 end

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Photosite
+    title K2PHOTO.INFO
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
@@ -23,7 +23,7 @@ html
             span class="icon-bar"
             span class="icon-bar"
             span class="icon-bar"
-          = link_to 'Супертишкин Суперсайт', root_path, class: 'navbar-brand'
+          = link_to 'K2PHOTO.INFO', root_path, class: 'navbar-brand'
         - if admin_signed_in? then
           div class="navbar-header"
             a href="javascript:void(0);" class="btn-custom outlined mleft_no reorder_link" id="save_reorder" Переставить фото
