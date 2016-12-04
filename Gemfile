@@ -36,6 +36,9 @@ gem 'simple_form'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+# Security
+gem 'figaro'
+
 # Localization
 gem 'rails-i18n', '~> 5.0.0'
 
