@@ -5,7 +5,4 @@ RSpec.describe "photos/show", type: :view do
     @photo = assign(:photo, Photo.create!())
   end
 
-  it "renders attributes in <p>" do
-    render
-  end
 end

@@ -8,7 +8,4 @@ RSpec.describe "photos/index", type: :view do
     ])
   end
 
-  it "renders a list of photos" do
-    render
-  end
 end

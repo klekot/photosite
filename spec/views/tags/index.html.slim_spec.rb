@@ -8,7 +8,4 @@ RSpec.describe "tags/index", type: :view do
     ])
   end
 
-  it "renders a list of tags" do
-    render
-  end
 end

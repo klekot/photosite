@@ -5,7 +5,4 @@ RSpec.describe "categories/show", type: :view do
     @category = assign(:category, Category.create!())
   end
 
-  it "renders attributes in <p>" do
-    render
-  end
 end

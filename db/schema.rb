@@ -67,11 +67,11 @@ ActiveRecord::Schema.define(version: 20161130190529) do
     t.index ["category_id"], name: "index_photos_on_category_id", using: :btree
   end
 
-  create_table "photos_tags", id: :integer, default: -> { "nextval('photos_tags_tables_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "photos_tags", force: :cascade do |t|
     t.integer "photo_id"
     t.integer "tag_id"
-    t.index ["photo_id"], name: "index_photos_tags_tables_on_photos_id", using: :btree
-    t.index ["tag_id"], name: "index_photos_tags_tables_on_tags_id", using: :btree
+    t.index ["photo_id"], name: "index_photos_tags_on_photo_id", using: :btree
+    t.index ["tag_id"], name: "index_photos_tags_on_tag_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|

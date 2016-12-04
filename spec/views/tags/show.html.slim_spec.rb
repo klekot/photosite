@@ -5,7 +5,4 @@ RSpec.describe "tags/show", type: :view do
     @tag = assign(:tag, Tag.create!())
   end
 
-  it "renders attributes in <p>" do
-    render
-  end
 end

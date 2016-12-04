@@ -7,8 +7,4 @@ RSpec.describe "categories/index", type: :view do
       Category.create!()
     ])
   end
-
-  it "renders a list of categories" do
-    render
-  end
 end

@@ -2,7 +2,8 @@ class TagsController < ApplicationController
   before_action :set_tag, only: [:show]
 
   def index
-    @tags = Tag.all
+    @tags = Tag.not_empty.to_a
+    @tags.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   end
 
   def show

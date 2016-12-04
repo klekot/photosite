@@ -21,7 +21,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '5.0.0'
 gem 'jquery-turbolinks'
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.x'
 gem 'react-rails'
 
 # JSON
