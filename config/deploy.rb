@@ -18,7 +18,7 @@ set_default :rvm_path, '~/.rvm'
 
 
 # shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'config/application.yml', 'log']
+set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'config/application.yml', 'log', 'public/uploads']
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
@@ -32,6 +32,9 @@ end
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
+
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/public/uploads"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/public/uploads"]
 
   queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
