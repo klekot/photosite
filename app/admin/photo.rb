@@ -43,11 +43,13 @@ ActiveAdmin.register Photo do
     end
     f.semantic_errors
     f.inputs :name, :description, :order
-    f.inputs "Загрузить", :multipart => true do
-      f.input :image, :as => :file, :hint => f.object.image.present? \
-        ? image_tag(f.object.image.url, class: 'admin-photo-form')
-      : content_tag(:span, "файл пока не выбран")
-      f.input :image_cache, :as => :hidden
+    if f.object.new_record?
+      f.inputs "Загрузить", :multipart => true do
+        f.input :image, :as => :file, :hint => f.object.image.present? \
+          ? image_tag(f.object.image.url, class: 'admin-photo-form')
+        : content_tag(:span, "файл пока не выбран")
+        f.input :image_cache, :as => :hidden
+      end
     end
     f.inputs :category, :published, :main_page
     input :tag_ids, input_html: { value: photo_tags.join(', ') }
@@ -57,6 +59,13 @@ ActiveAdmin.register Photo do
   controller do
     def create
       @photo = Photo.new
+      @photo.name = params[:photo][:name]
+      @photo.description = params[:photo][:description]
+      @photo.image = params[:photo][:image]
+      @photo.published = params[:photo][:published]
+      @photo.main_page = params[:photo][:main_page]
+      @photo.category = Category.find(params[:photo][:category_id])
+      @photo.order = params[:photo][:order]
       if @photo.save
         add_tags_to_photo params[:photo][:tag_ids]
         render 'edit'
@@ -77,8 +86,18 @@ ActiveAdmin.register Photo do
 
     def update
       @photo = Photo.find params[:id]
-      add_tags_to_photo params[:photo][:tag_ids]
-      render 'edit'
+      @photo.name = params[:photo][:name]
+      @photo.description = params[:photo][:description]
+      @photo.published = params[:photo][:published]
+      @photo.main_page = params[:photo][:main_page]
+      @photo.category = Category.find(params[:photo][:category_id])
+      @photo.order = params[:photo][:order]
+      if @photo.save
+        add_tags_to_photo params[:photo][:tag_ids]
+        render 'edit'
+      else
+        render 'new'
+      end
     end
 
     private
