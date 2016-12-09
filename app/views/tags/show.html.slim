@@ -2,4 +2,4 @@ p#notice = notice
 
 div.images-container
   - @photos_with_tag.each do |photo|
-    = link_to image_tag(photo.image.to_s, class: "image-responsive image-list"), photo.image.to_s, class: "fancybox"
+    = link_to image_tag(photo.image.to_s, class: "image-responsive image-list"), photo.image.to_s, class: "fancybox", rel: "gallery03"

@@ -15,4 +15,5 @@
 #= require jquery_ujs
 #= require fancybox
 #= require bootstrap-sprockets
+#= require jquery.montage
 #= require_tree .

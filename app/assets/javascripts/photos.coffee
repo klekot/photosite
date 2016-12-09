@@ -12,7 +12,7 @@ $(document).ready ->
     'margin': 50
     'showCloseButton': true
     'showNavArrows': true
-    'cyclic': false
+    'cyclic': true
     'hideOnContentClick': true
     'modal': false
   $('.reorder_link').on 'click', ->
