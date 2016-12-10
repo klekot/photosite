@@ -57,7 +57,7 @@ $ ->
       if cnt == totalImgs
         $imgs.show()
         $container.montage
-          fixedHeight: 200
+          fixedHeight: 170
           fillLastRow: false
           alternateHeight: false
           alternateHeightRange:
