@@ -1,15 +1,7 @@
 p id="notice" = notice
 
 div class="images-container"
-  div id="reorder-helper" class="light_box" style="display:none;"
-    |1. Перетянуть фото на нужное место.
-    br
-      |2. Сохранить.
-  div class="gallery"
-    div class="reorder_ul reorder-photos-list"
-      div.am-container#am-container
-      - get_rows.each do |photo|
-        - image_path = photo.image.to_s
-        span id="image_li_#{ photo.id.to_s }" class="ui-sortable-handle"
-          a href="javascript:void(0);" style="float:none;" class="image_link"
-            = link_to image_tag(image_path, class: "image-responsive image-list"), image_path, class: "fancybox", rel: "gallery01"
+- if current_admin
+  = render partial: 'shared/editor_on'
+- else
+  = render partial: 'shared/editor_off'

@@ -23,7 +23,7 @@ html
             span class="icon-bar"
             span class="icon-bar"
             span class="icon-bar"
-          = link_to 'K2PHOTO.INFO', root_path, class: 'navbar-brand'
+          a.navbar-brand href="#{root_path}" K<span style="color: red;">2</span>PHOTO.INFO
         - if admin_signed_in? then
           div class="navbar-header"
             a href="javascript:void(0);" class="btn-custom outlined mleft_no reorder_link" id="save_reorder" Переставить фото

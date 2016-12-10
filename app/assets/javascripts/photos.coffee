@@ -6,8 +6,8 @@ $(document).ready ->
   $('a.fancybox').fancybox
     'transitionIn': 'elastic'
     'transitionOut': 'elastic'
-    'speedIn': 600
-    'speedOut': 200
+    'speedIn': 800
+    'speedOut': 300
     'overlayShow': true
     'margin': 50
     'showCloseButton': true
@@ -41,5 +41,30 @@ $(document).ready ->
         return false
       e.preventDefault()
       return
+    return
+  return
+
+$ ->
+  $container = $('#am-container')
+  $imgs = $container.find('img').hide()
+  totalImgs = $imgs.length
+  cnt = 0
+  $imgs.each (i) ->
+    $img = $(this)
+    $('<img/>').load(->
+      ++cnt
+      $('#number_img').text cnt.toString()
+      if cnt == totalImgs
+        $imgs.show()
+        $container.montage
+          fillLastRow: true
+          alternateHeight: true
+          alternateHeightRange:
+            min: 220
+            max: 250
+          margin: 0
+        $('#load').css 'display', 'none'
+      return
+    ).attr 'src', $img.attr('src')
     return
   return

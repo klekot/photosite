@@ -44,6 +44,14 @@
   font-family: "Summer_Font_Light";
   src: url(Summer_Font_Light.otf) format("truetype");
 }
+@font-face {
+  font-family: "SFNSDisplay-Ultralight";
+  src: url(SF/SFNSDisplay-Ultralight.otf) format("truetype");
+}
+@font-face {
+  font-family: "SFNSDisplay-Black";
+  src: url(SF/SFNSDisplay-Black.otf) format("truetype");
+}
 
 * {
   margin: 0;
@@ -62,8 +70,8 @@ h1 {
   margin-top: -25px;
   margin-bottom: -5px;
   text-align: center;
-  font-family: "Dear_Joe";
-  font-size: 8vw;
+  font-family: "SFNSDisplay-Ultralight";
+  font-size: 4vw;
   font-weight: bold;
   color: #777777;
 }
@@ -102,8 +110,8 @@ h1 {
 .navbar-default {
   //font-family: 'Neucha', cursive;
   //font-family: 'Jura', sans-serif;
-  font-family: "Summer_Font_Light";
-  font-size: 3vw;
+  font-family: "SFNSDisplay-Ultralight";
+  font-size: 2vw;
   color: white;
   background-color: black;
   border-color: black;
@@ -113,8 +121,8 @@ h1 {
 .navbar-brand {
   //font-family: 'Neucha', cursive;
   //font-family: 'Jura', sans-serif;
-  font-family: "Summer_Font_Light";
-  font-size: 4vw;
+  font-family: "SFNSDisplay-Black";
+  font-size: 2vw;
   font-weight: bold;
   color: white;
 }
