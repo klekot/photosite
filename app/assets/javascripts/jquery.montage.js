@@ -285,7 +285,7 @@
 			$img.css({
 				left	: - ( w - cropParam.x ) / 2 + 'px',
 				top		: - ( h - cropParam.y ) / 2 + 'px'
-			});	
+			});
 			
 			// wrap the image in a <a> element
 			$wrapper.addClass('am-wrapper').css({

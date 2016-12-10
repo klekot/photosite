@@ -71,9 +71,11 @@ h1 {
   margin-bottom: -5px;
   text-align: center;
   font-family: "SFNSDisplay-Ultralight";
-  font-size: 4vw;
+  font-size: 2vw;
   font-weight: bold;
   color: #777777;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   .container {
@@ -107,6 +109,9 @@ h1 {
   align-items: center;
   //margin-bottom: 50px;
 }
+.navbar {
+  min-height: 70px;
+}
 .navbar-default {
   //font-family: 'Neucha', cursive;
   //font-family: 'Jura', sans-serif;
@@ -121,7 +126,7 @@ h1 {
 .navbar-brand {
   //font-family: 'Neucha', cursive;
   //font-family: 'Jura', sans-serif;
-  font-family: "SFNSDisplay-Black";
+  font-family: "SFNSDisplay-Ultralight";
   font-size: 2vw;
   font-weight: bold;
   color: white;
