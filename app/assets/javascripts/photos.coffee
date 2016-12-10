@@ -57,12 +57,12 @@ $ ->
       if cnt == totalImgs
         $imgs.show()
         $container.montage
-          fixedHeight: 170
+          #fixedHeight: 170
           fillLastRow: false
-          alternateHeight: false
+          alternateHeight: true
           alternateHeightRange:
-            min: 120
-            max: 120
+            min: 150
+            max: 350
           margin: 5
         $('#load').css 'display', 'none'
       return
