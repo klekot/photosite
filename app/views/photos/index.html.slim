@@ -1,7 +1,8 @@
 p id="notice" = notice
 
 div class="images-container"
-- if current_admin
   = render partial: 'shared/editor_on'
-- else
-  = render partial: 'shared/editor_off'
+/- if current_admin
+/  = render partial: 'shared/editor_on'
+/- else
+/  = render partial: 'shared/editor_off'
