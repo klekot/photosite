@@ -6,12 +6,23 @@
 .images-container {
   text-align: justify;
 }
+.image-container {
+  display: inline-block;
+  position: relative;
+  //border: 1px solid #9d9d9d;
+  //background-color: #9d9d9d;
+  margin: 10px;
+  text-align: center;
+}
 .image-list {
-  max-height: 250px;
+  max-width: 300px;
+  max-width: 300px;
   //border-radius: 5px;
 }
 img.image-list {
-  margin: 5px;
+  max-width: 280px;
+  max-height: 280px;
+  //margin: 5px;
   //border: 10px solid white;
 
   box-shadow:
@@ -105,3 +116,8 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 .notice a { font-weight: bold; }
 .notice_error { background: #E46360; }
 .notice_success { background: #657E3F; }
+
+.reorder_ul.reorder-photos-list {
+  text-align: center;
+  //vertical-align: top;
+}

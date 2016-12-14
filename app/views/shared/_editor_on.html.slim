@@ -7,6 +7,7 @@ div class="gallery"
     div.am-container#am-container
     - get_rows.each do |photo|
       - image_path = photo.image.to_s
-      span id="image_li_#{ photo.id.to_s }" class="ui-sortable-handle"
-        a href="javascript:void(0);" style="float:none;" class="image_link"
-          = link_to image_tag(image_path, class: "image-responsive image-list"), image_path, class: "fancybox", rel: "gallery01"
+      div.image-container
+        span id="image_li_#{ photo.order.to_s }" class="ui-sortable-handle"
+          a href="javascript:void(0);" style="float:none;" class="image_link"
+            = link_to image_tag(image_path, class: "image-responsive image-list"), image_path, class: "fancybox", rel: "gallery01"
