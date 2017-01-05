@@ -4,32 +4,40 @@
 
 
 .images-container {
-  text-align: justify;
+  text-align: center;
 }
 .image-container {
   display: inline-block;
   position: relative;
-  //border: 1px solid #9d9d9d;
+  border: 1px solid #f80909;
   //background-color: #9d9d9d;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
+  width: 220px;
+  height: 220px;
+  vertical-align: middle;
+}
+.inner-container {
+  display:table;
+  width:220px;
+  height:220px;
 }
 .image-list {
-  max-width: 300px;
-  max-width: 300px;
+  max-width: 210px;
+  max-width: 210px;
   //border-radius: 5px;
 }
 img.image-list {
-  max-width: 280px;
-  max-height: 280px;
+  max-width: 210px;
+  max-height: 210px;
   //margin: 5px;
   //border: 10px solid white;
 
-  box-shadow:
-          0 1px 4px rgba(0, 0, 0, .3),
-          -23px 0 20px -23px rgba(0, 0, 0, .8),
-          23px 0 20px -23px rgba(0, 0, 0, .8),
-          0 0 40px rgba(0, 0, 0, .1) inset;
+  //box-shadow:
+  //        0 1px 4px rgba(0, 0, 0, .3),
+  //        -23px 0 20px -23px rgba(0, 0, 0, .8),
+  //        23px 0 20px -23px rgba(0, 0, 0, .8),
+  //        0 0 40px rgba(0, 0, 0, .1) inset;
 }
 
 /* ============================= */
@@ -84,9 +92,9 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   //margin-top:50px;
 }
 .gallery div{
-  text-align: justify;
-  margin:0;
-  padding:0;
+  //text-align: justify;
+  //margin:0;
+  //padding:0;
   list-style-type:none;
 }
 .gallery div span{
@@ -120,4 +128,9 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 .reorder_ul.reorder-photos-list {
   text-align: center;
   //vertical-align: top;
+}
+
+.image-span {
+  display:table-cell;
+  vertical-align:middle;
 }

@@ -22,7 +22,10 @@ html
             span class="icon-bar"
             span class="icon-bar"
             span class="icon-bar"
-          a.navbar-brand href="#{root_path}" K<span style="color: red;">2</span>PHOTO.INFO
+          p
+            a.navbar-brand href="#{root_path}" K<span style="color: #f80909;">2</span>PHOTO.INFO
+            a href="#{root_path}"
+              p.photograph-name фотограф Кристина Шин
         - if admin_signed_in? then
           div class="navbar-header"
             a href="javascript:void(0);" class="btn-custom outlined mleft_no reorder_link" id="save_reorder" Переставить фото
@@ -36,7 +39,7 @@ html
               ul class="dropdown-menu"
                 - Category.all.each do |category|
                   li = link_to category.name, category_path(category.id)
-            li = link_to 'Теги', tags_path
+            /li = link_to 'Теги', tags_path
             li = link_to 'Контакты', contact_path
 
     div class="wrapper"

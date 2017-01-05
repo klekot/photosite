@@ -42,7 +42,7 @@ ActiveAdmin.register Photo do
       photo_tags << tag.name
     end
     f.semantic_errors
-    f.inputs :name, :description, :order
+    f.inputs :name, :description #, :order
     if f.object.new_record?
       f.inputs "Загрузить", :multipart => true do
         f.input :image, :as => :file, :hint => f.object.image.present? \
@@ -65,8 +65,8 @@ ActiveAdmin.register Photo do
       @photo.published = params[:photo][:published]
       @photo.main_page = params[:photo][:main_page]
       @photo.category = Category.find(params[:photo][:category_id])
-      @photo.order = params[:photo][:order]
-      if @photo.save
+      @photo.order = last_order_number
+          if @photo.save
         add_tags_to_photo params[:photo][:tag_ids]
         render 'edit'
       else
@@ -101,6 +101,14 @@ ActiveAdmin.register Photo do
     end
 
     private
+
+    def last_order_number
+      order_number = 0
+      Photo.all.each do |photo|
+        order_number = photo.order if photo.order > order_number
+      end
+      order_number += 1
+    end
 
     def add_tags_to_photo params_tags
       photo_tags = []

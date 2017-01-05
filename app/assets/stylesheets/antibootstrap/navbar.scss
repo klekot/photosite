@@ -71,7 +71,7 @@
 
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 340px;
+  max-height: 300px;
 }
 @media (max-device-width: 480px) and (orientation: landscape) {
   .navbar-fixed-top .navbar-collapse,
@@ -93,8 +93,8 @@
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
     margin-right: 0;
-    margin-left: 0;
-    margin-top: 7px;
+    margin-left: 50px;
+    margin-top: 20px;
   }
 }
 
@@ -205,6 +205,11 @@
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+
+  font-family: "American Typewriter";
+  font-size: 1.65vw;
+  //font-weight: bold;
+  color: #f80909;
 }
 @media (max-width: 767px) {
   /* line 243, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
@@ -400,7 +405,8 @@
   /* line 382, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-right {
     float: right !important;
-    margin-right: -15px;
+    margin-right: 35px;
+    margin-top: 40px;
   }
   /* line 386, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-right ~ .navbar-right {
@@ -427,11 +433,11 @@
 }
 /* line 415, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > li > a {
-  color: white;
+  color: #f80909;
 }
 /* line 418, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: white;
+  color: #f80909;
   background-color: transparent;
 }
 /* line 425, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
@@ -464,16 +470,16 @@
 /* line 462, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: #444444;
-  color: white;
+  color: #f80909;
 }
 @media (max-width: 767px) {
   /* line 473, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: white;
+    color: #f80909;
   }
   /* line 475, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: white;
+    color: #f80909;
     background-color: transparent;
   }
   /* line 482, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
@@ -483,7 +489,7 @@
   }
   /* line 490, /Users/igor/.rvm/gems/ruby-2.3.1@rails5/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: white;
+    color: #f80909;
     background-color: transparent;
   }
 }
