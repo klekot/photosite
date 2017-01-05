@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     Photo.all.order(:order).each_with_index do |photo, i|
       if photo.order != id_array[i]
         ph = Photo.find_by(order: id_array[i])
-        ph.order = i+1
+        ph.order = i
         ph.save
       end
     end
