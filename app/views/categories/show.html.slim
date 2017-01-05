@@ -5,7 +5,7 @@ div class="images-container"
     - image_path = photo.image.to_s
     div.image-container
       div.inner-container
-        span.ui-sortable-handle id="image_li_#{ photo.order.to_s }"
+        span.ui-sortable-handle.image-span id="image_li_#{ photo.order.to_s }"
           a href="javascript:void(0);" style="float:none;" class="image_link"
             = link_to image_tag(image_path, class: "image-responsive image-list"), image_path, class: "fancybox", rel: "gallery01"
   /  - image_path = photo.image.to_s
