@@ -26,7 +26,7 @@ html
             a.navbar-brand href="#{root_path}" K<span style="color: #f80909;">2</span>PHOTO.INFO
             a href="#{root_path}"
               p.photograph-name фотограф Кристина Шин
-        - if admin_signed_in? then
+        - if admin_signed_in? && request.original_fullpath=='/' then
           div class="navbar-header"
             a href="javascript:void(0);" class="btn-custom outlined mleft_no reorder_link" id="save_reorder" Переставить фото
 

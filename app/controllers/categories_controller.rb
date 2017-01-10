@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @photos_in_category = []
-    Photo.all.each do |photo|
+    Photo.published.each do |photo|
       @photos_in_category.push photo if photo.category_id == @category.id
     end
   end

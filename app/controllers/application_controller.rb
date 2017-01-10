@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_rows
-    Photo.all.order(:order)
+    Photo.published.main_page.order(:order)
   end
 
   def update_order(id_array)
