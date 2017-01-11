@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
 
   def update_order(id_array)
     Photo.published.main_page.order(:order).each_with_index do |photo, i|
-      if photo.order != id_array[i]
+      #if photo.order != id_array[i]
         ph = Photo.find_by(order: id_array[i])
         ph.order = i
         ph.save
-      end
+      #end
     end
   end
 end
