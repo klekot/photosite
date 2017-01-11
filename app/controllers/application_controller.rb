@@ -13,14 +13,14 @@ class ApplicationController < ActionController::Base
   end
 
   def update_order(id_array)
-    current_id = 0
-    Photo.published.main_page.order(:order).each_with_index do |photo, i|
-      if photo.order != current_id
-        ph = Photo.find_by(order: id_array[i])
-        ph.order = i
-        ph.save
-        current_id = ph.id
-      end
+    old_ordered_photos = []
+    Photo.published.main_page.order(:order).each do |photo|
+      old_ordered_photos.push photo
+    end
+    id_array.each_with_index do |id, i|
+      ph = old_ordered_photos[i]
+      ph.order = id
+      ph.save
     end
   end
 end
