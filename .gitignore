@@ -16,6 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+logfile
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -29,3 +30,6 @@
 
 # Ignore NetBeans project files
 /nbproject
+
+# Ignore uploads
+/public/uploads
