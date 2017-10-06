@@ -70,7 +70,7 @@ ru:
   devise:
     failure:
       admin:
-        unauthenticated: "Введите ваш логин и пароль"
+        unauthenticated: Введите ваш логин и пароль
     sessions:
       admin:
-        signed_in:
+        signed_in: Вы успешно вошли в админ-панель сайта!

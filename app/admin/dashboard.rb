@@ -9,7 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
        panel "Последние добавленные фото" do
          ul do
            Photo.last(15).map do |photo|
-             li link_to(photo.name, admin_photo_path(photo))
+             li link_to(photo, admin_photo_path(photo))
            end
          end
        end
