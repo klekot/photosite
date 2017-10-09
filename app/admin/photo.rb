@@ -66,7 +66,7 @@ ActiveAdmin.register Photo do
       @photo.main_page = params[:photo][:main_page]
       @photo.category = Category.find(params[:photo][:category_id])
       @photo.order = last_order_number
-          if @photo.save
+      if @photo.save
         add_tags_to_photo params[:photo][:tag_ids]
         render 'edit'
       else
